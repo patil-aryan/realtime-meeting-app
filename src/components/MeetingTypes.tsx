@@ -142,9 +142,7 @@ const MeetingTypes = () => {
             >
               <UserPlus className="text-white" size="60" />
             </button>*/}
-              <JoinMeeting handleJoin={(e) => {
-                setValues({...values, link: e.target.value})}
-              }  />
+                <JoinMeeting />
           </div> 
         
 
