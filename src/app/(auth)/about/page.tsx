@@ -14,7 +14,7 @@ export default function HomePage() {
 
   return (
     <LandingLayout>
-    <div className="bg-gradient-to-b from-[#0d1b2a] to-[#1b263b] min-h-screen text-white">
+    <div className="bg-gradient-to-b from-[#4f43a1] to-[#1b263b] min-h-screen text-white">
       {/* Hero Section */}
       <section className="text-center py-20 px-4">
         <h1 className="text-5xl font-bold mb-4">Welcome to Easy Meets</h1>

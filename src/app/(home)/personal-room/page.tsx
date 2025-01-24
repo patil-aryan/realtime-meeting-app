@@ -148,13 +148,13 @@ const Personal = () => {
         </thead>
         <tbody>
           <tr>
-            <td className="p-2 border-b border-gray-700 text-sky-500">Topic:</td>
+            <td className="p-2 border-b border-gray-700 text-white font-bold">Topic:</td>
             <td className="p-2 border-b border-gray-700 font-bold">
               {user?.username}'s Meeting Room
             </td>
           </tr>
           <tr>
-            <td className="p-2 border-b border-gray-700 text-sky-500">
+            <td className="p-2 border-b border-gray-700 text-white font-bold">
               Meeting ID:
             </td>
             <td className="p-2 border-b border-gray-700 font-bold">
@@ -162,7 +162,7 @@ const Personal = () => {
             </td>
           </tr>
           <tr>
-            <td className="p-2 border-b border-gray-700 text-sky-500">
+            <td className="p-2 border-b border-gray-700 text-white font-bold">
               Invite Link:
             </td>
             <td className="p-2 border-b border-gray-700 font-bold">

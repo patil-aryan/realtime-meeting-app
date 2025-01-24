@@ -10,9 +10,12 @@ body {
   /* background: #011936; */
   /* background: #4d1851; */
   /* background: #200122; */
-  background: #281529;
+  /* background: #281529; */
   /* background: #1C110A; */
-  
+  /* background: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%); */
+  /* background: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%); */
+  background:  linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);
+  /* background:  linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%); */
 }
 
 @layer utilities {
