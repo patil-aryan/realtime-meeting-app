@@ -46,7 +46,7 @@ const MeetingSetup = ({
 </div>
 
 </div> */}
-      <div className="flex flex-col items-center h-[85vh] justify-center space-y-10">
+      <div className="flex flex-col items-center h-[85vh] justify-center space-y-10 text-black">
         <h1 className="text-2xl font-bold ">Setup</h1>
         <VideoPreview className="flex items-center justify-center w-[40vw] h-[40vh]" />
         <div className="flex items-center justify-center space-x-4">

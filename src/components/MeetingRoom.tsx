@@ -342,12 +342,11 @@
 //   const [layout, setLayout] = useState<CallLayoutType>("speaker-left");
 //   const [showParticipants, setShowParticipants] = useState(false);
 //   const searchParams = useSearchParams();
-//   const isPersonalRoom = !!searchParams.get("personal"); 
+//   const isPersonalRoom = !!searchParams.get("personal");
 //   const { useCallCallingState } = useCallStateHooks();
 //   const callingState = useCallCallingState();
 
 //   if (callingState !== CallingState.JOINED) return <LoaderIcon />
-
 
 //   const CallLayout = () => {
 //     switch (layout) {
@@ -393,7 +392,6 @@
 //           <div className="flex items-center gap-2 px-4 py-2 flex-wrap">
 //             <CallControls />
 //             {!isPersonalRoom && <EndCallButton />}
-            
 
 //             <div className="h-8 w-[1px] bg-white/20 mx-2" />
 
@@ -428,14 +426,13 @@
 //             <div className="flex items-center justify-center "><CallStatsButton /></div>
 //           </div>
 //         </div>
-       
+
 //       </div>
 //     </section>
 //   );
 // };
 
 // export default MeetingRoom;
-
 
 "use client";
 import { cn } from "@/lib/utils";
@@ -448,13 +445,7 @@ import {
   SpeakerLayout,
   useCallStateHooks,
 } from "@stream-io/video-react-sdk";
-import { 
-  Users, 
-  LayoutList, 
-  Minimize2, 
-  Maximize2, 
-  LogOut 
-} from "lucide-react";
+import { Users, LayoutList, Minimize2, Maximize2, LogOut } from "lucide-react";
 import React, { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import EndCallButton from "./EndCallButton";
@@ -467,10 +458,10 @@ const MeetingRoom = () => {
   const [layout, setLayout] = useState<CallLayoutType>("speaker-left");
   const [showParticipants, setShowParticipants] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  
+
   const searchParams = useSearchParams();
   const isPersonalRoom = !!searchParams.get("personal");
-  
+
   const { useCallCallingState } = useCallStateHooks();
   const callingState = useCallCallingState();
 
@@ -500,7 +491,7 @@ const MeetingRoom = () => {
   };
 
   return (
-    <section 
+    <section
       className={cn(
         "relative h-[calc(100vh-6rem)] w-full",
         "bg-gradient-to-br from-[#0d1b2a] to-[#1b263b]",
@@ -509,7 +500,7 @@ const MeetingRoom = () => {
     >
       {/* Video Container with Enhanced Shadow and Rounded Corners */}
       <div className="absolute inset-0 flex items-center justify-center p-6">
-        <div 
+        <div
           className={cn(
             "w-full h-full max-w-[1800px]",
             "rounded-2xl overflow-hidden",
@@ -537,8 +528,15 @@ const MeetingRoom = () => {
       </div>
 
       {/* Enhanced Floating Controls Bar */}
-      <div className="fixed bottom-8 -right-24 -translate-x-1/2">
-        <div 
+      <div
+        className={cn(
+          "fixed bottom-8",
+          "left-[calc(50%+180px)]", // Adjust for sidebar width
+          "-translate-x-1/2", // Center the controls bar
+          "transition-all duration-300 ease-in-out"
+        )}
+      >
+        <div
           className={cn(
             "bg-[#0d1b2a]/90 backdrop-blur-xl",
             "rounded-full shadow-2xl border border-white/10",
@@ -547,12 +545,12 @@ const MeetingRoom = () => {
           )}
         >
           <div className="flex items-center gap-4 px-6 py-3">
-            <CallControls onLeave={() => router.push('/')} />
+            <CallControls onLeave={() => router.push("/")} />
             {!isPersonalRoom && <EndCallButton />}
-            
+
             <div className="h-8 w-[1px] bg-white/20 mx-2" />
-            
-            <Tooltip content={layout === "grid" ? "Speaker View" : "Grid View"}>
+
+            {/* <Tooltip content={layout === "grid" ? "Speaker View" : "Grid View"}>
               <button
                 onClick={() => setLayout(layout === "grid" ? "speaker-left" : "grid")}
                 className={cn(
@@ -614,6 +612,84 @@ const MeetingRoom = () => {
                       "text-white",
                       "group-hover:rotate-6 transition-transform"
                     )} 
+                  />
+                )}
+              </button>
+            </Tooltip> */}
+            {/* Layout Toggle Tooltip */}
+            <Tooltip>
+              <span>{layout === "grid" ? "Speaker View" : "Grid View"}</span>
+              <button
+                onClick={() =>
+                  setLayout(layout === "grid" ? "speaker-left" : "grid")
+                }
+                className={cn(
+                  "p-3 rounded-full transition-all group",
+                  "hover:bg-white/10 active:scale-95",
+                  layout === "grid" ? "bg-white/20" : "bg-transparent"
+                )}
+              >
+                <LayoutList
+                  size={20}
+                  className={cn(
+                    "text-white",
+                    "group-hover:rotate-6 transition-transform"
+                  )}
+                />
+              </button>
+            </Tooltip>
+
+            {/* Participants Toggle Tooltip */}
+            <Tooltip>
+              <span>
+                {showParticipants ? "Hide Participants" : "Show Participants"}
+              </span>
+              <button
+                onClick={() => setShowParticipants((prev) => !prev)}
+                className={cn(
+                  "p-3 rounded-full transition-all group",
+                  "hover:bg-white/10 active:scale-95",
+                  showParticipants ? "bg-white/20" : "bg-transparent"
+                )}
+              >
+                <Users
+                  size={20}
+                  className={cn(
+                    "text-white",
+                    "group-hover:scale-110 transition-transform"
+                  )}
+                />
+              </button>
+            </Tooltip>
+
+            {/* Fullscreen Toggle Tooltip */}
+            <Tooltip>
+              <span>
+                {isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+              </span>
+              <button
+                onClick={toggleFullscreen}
+                className={cn(
+                  "p-3 rounded-full transition-all group",
+                  "hover:bg-white/10 active:scale-95",
+                  isFullscreen ? "bg-white/20" : "bg-transparent"
+                )}
+              >
+                {isFullscreen ? (
+                  <Minimize2
+                    size={20}
+                    className={cn(
+                      "text-white",
+                      "group-hover:-rotate-6 transition-transform"
+                    )}
+                  />
+                ) : (
+                  <Maximize2
+                    size={20}
+                    className={cn(
+                      "text-white",
+                      "group-hover:rotate-6 transition-transform"
+                    )}
                   />
                 )}
               </button>
