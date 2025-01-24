@@ -16,8 +16,8 @@ const Home = () => {
 
   return (
     <>
-      <div className="m-1 flex items-center mx-4">
-        <div className="items-center h-[30vh] w-full bg-hero bg-cover bg-center border-e-sidebar-accent border text-white rounded-[24px]">
+      <div className="flex items-center mx-4">
+        <div className="items-center h-[30vh] w-full bg-hero bg-cover bg-center   text-white rounded-[24px]">
           <h2 className="text-lg m-6 font-mono rounded text-center">
             <span className=" bg-neutral-600 px-3 py-2 rounded-md">Upcoming meeting at - 10:00 AM</span>
           </h2>

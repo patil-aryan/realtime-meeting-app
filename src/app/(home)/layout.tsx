@@ -6,7 +6,7 @@ import StreamVideoProvider from "../../../providers/StreamClientProvider";
 import { LampDesk } from "lucide-react";
 import { ReactNode } from "react";
 
-
+//min-h-screen in main
 
 const HomeLayout = ({ children } : {children: ReactNode}) => {
   return (
@@ -15,7 +15,7 @@ const HomeLayout = ({ children } : {children: ReactNode}) => {
       <AppSidebar />
      
       <main className="flex flex-col min-h-screen w-full" >
-      <div className="flex justify-between items-center h-10 bg-[#001011] border border-white  text-white px-4 rounded-md m-2 mx-4">
+      <div className="flex justify-between items-center h-10 bg-[#001011]   text-white px-4 rounded-md m-2 mx-4">
       <SidebarTrigger />
           <div className="text-xl font-mono flex items-center gap-3 "> 
             <span>

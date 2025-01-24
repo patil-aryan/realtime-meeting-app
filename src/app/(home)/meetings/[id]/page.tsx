@@ -5,11 +5,11 @@ import MeetingSetup from '@/components/MeetingSetup'
 import { useGetCall } from '@/hooks/use-getcall'
 import { useUser } from '@clerk/nextjs'
 import { StreamCall, StreamTheme } from '@stream-io/video-react-sdk'
-import React from 'react'
+import React, { useState } from 'react'
 
 const Meetings = ({params: {id}} : {params : {id: string}}) => {
 
-    const [isSetupComplete, setIsSetupComplete] = React.useState(false)
+    const [isSetupComplete, setIsSetupComplete] = useState(false)
 
     const {user, isLoaded} = useUser()
 
@@ -20,9 +20,9 @@ const Meetings = ({params: {id}} : {params : {id: string}}) => {
   return (
     <div className=' m-4'>
         <StreamCall call={call}>
-            <StreamTheme>
+            <StreamTheme className='text-white'>
                 {!isSetupComplete ? (
-                   <MeetingSetup /> 
+                   <MeetingSetup setIsSetupComplete={setIsSetupComplete} /> 
                 ) : ( 
                     <MeetingRoom />
                 )}
