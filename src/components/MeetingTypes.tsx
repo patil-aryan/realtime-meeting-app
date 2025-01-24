@@ -9,6 +9,7 @@ import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
 import { useToast } from "@/hooks/use-toast";
 import { ScheduleMeeting } from "./ScheduleMeeting";
 import MeetingLink from "./MeetingList";
+import { JoinMeeting } from "./JoinMeeting";
 
 interface MeetingValues {
   // title?: string;
@@ -134,14 +135,18 @@ const MeetingTypes = () => {
         {/* bg-line bg-cover */}
         <div className="w-full  bg-[#171010]  flex flex-col justify-between  rounded-[24px]">
           <div className="ml-12 mt-6">
-            <button
+            {/* <button
               onClick={() => {
                 setMeetingState("isInstantMeeting");
               }}
             >
               <UserPlus className="text-white" size="60" />
-            </button>
-          </div>
+            </button>*/}
+              <JoinMeeting handleJoin={(e) => {
+                setValues({...values, link: e.target.value})}
+              }  />
+          </div> 
+        
 
           <div className="ml-10 mb-8 text-white  ">
             <h1 className="text-2xl font-semibold">Join Meeting</h1>

@@ -456,7 +456,7 @@ import {
   LogOut 
 } from "lucide-react";
 import React, { useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import EndCallButton from "./EndCallButton";
 import LoaderIcon from "./Loader";
 import { Tooltip } from "@/components/ui/tooltip";
@@ -473,6 +473,8 @@ const MeetingRoom = () => {
   
   const { useCallCallingState } = useCallStateHooks();
   const callingState = useCallCallingState();
+
+  const router = useRouter();
 
   if (callingState !== CallingState.JOINED) return <LoaderIcon />;
 
@@ -545,7 +547,7 @@ const MeetingRoom = () => {
           )}
         >
           <div className="flex items-center gap-4 px-6 py-3">
-            <CallControls />
+            <CallControls onLeave={() => router.push('/')} />
             {!isPersonalRoom && <EndCallButton />}
             
             <div className="h-8 w-[1px] bg-white/20 mx-2" />

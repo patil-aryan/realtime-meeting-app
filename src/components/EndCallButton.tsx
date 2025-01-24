@@ -23,7 +23,7 @@ const EndCallButton = () => {
         onClick={async () => {
             await call.endCall();
             router.push('/')}}>
-            End Call for everyone.
+            End Call for everyone
         </Button>
     
   )
