@@ -537,7 +537,7 @@ const MeetingRoom = () => {
       </div>
 
       {/* Enhanced Floating Controls Bar */}
-      <div className="fixed bottom-8 left-1/2 -translate-x-1/2">
+      <div className="fixed bottom-8 -right-24 -translate-x-1/2">
         <div 
           className={cn(
             "bg-[#0d1b2a]/90 backdrop-blur-xl",
