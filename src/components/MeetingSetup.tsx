@@ -47,10 +47,10 @@ const MeetingSetup = ({
 
 </div> */}
       <div className="flex flex-col items-center h-[85vh] justify-center space-y-10 text-black">
-        <h1 className="text-2xl font-bold ">Setup</h1>
+        <h1 className="text-2xl font-bold text-white">Setup</h1>
         <VideoPreview className="flex items-center justify-center w-[40vw] h-[40vh]" />
         <div className="flex items-center justify-center space-x-4">
-          <label className="flex items-center gap-x-4 text-xl">
+          <label className="flex items-center gap-x-4 text-xl text-white">
             <input
              
               type="checkbox"

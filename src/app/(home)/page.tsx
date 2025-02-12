@@ -33,7 +33,7 @@ const Home = () => {
       <MeetingTypes />
 
       <div className="m-4">
-            <h1 className="font-bold text-2xl   ml-4 mt-2 mb-8">
+            <h1 className="font-bold text-2xl text-[#7e6cda]  ml-4 mt-2 mb-8">
                 Upcoming Meetings
             </h1>
         <MeetingList type='upcoming' />

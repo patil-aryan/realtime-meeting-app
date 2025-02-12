@@ -17,7 +17,7 @@
 //   description: string;
 // }) => {
 //   return (
-//     <div className= text-black flex flex-col items-start gap-2 lg:flex-row">
+//     <div className= text-white flex flex-col items-start gap-2 lg:flex-row">
 //       <h1 className="text-base font-medium text-sky-500 lg:text-xl">{title}</h1>
 //       <h1 className="truncate text-sm font-bold lg:text-xl">{description}</h1>
 //     </div>
@@ -58,7 +58,7 @@
 //   return (
 //     <>
 //       <div className="m-10">
-//         <h1 className="font-bold text-2xl text-center text-black mb-12 -mt-6">
+//         <h1 className="font-bold text-2xl text-center text-white mb-12 -mt-6">
 //           Personal Room
 //         </h1>
 
@@ -132,12 +132,12 @@ const Personal = () => {
 
   return (
     <div className="m-10">
-      <h1 className="font-bold text-2xl text-center mb-12 -mt-6">
+      <h1 className="font-bold text-2xl text-center text-white mb-12 -mt-6">
         Personal Room
       </h1>
 
       {/* Table */}
-      <table className="w-full text-black border-collapse">
+      <table className="w-full text-white border-collapse">
         <thead>
           <tr>
             <th className="text-left p-2 border-b border-gray-700">Title</th>
@@ -148,13 +148,13 @@ const Personal = () => {
         </thead>
         <tbody>
           <tr>
-            <td className="p-2 border-b border-gray-700 text-black font-bold">Topic:</td>
+            <td className="p-2 border-b border-gray-700 text-white font-bold">Topic:</td>
             <td className="p-2 border-b border-gray-700 font-bold">
               {user?.username}'s Meeting Room
             </td>
           </tr>
           <tr>
-            <td className="p-2 border-b border-gray-700 text-black font-bold">
+            <td className="p-2 border-b border-gray-700 text-white font-bold">
               Meeting ID:
             </td>
             <td className="p-2 border-b border-gray-700 font-bold">
@@ -162,7 +162,7 @@ const Personal = () => {
             </td>
           </tr>
           <tr>
-            <td className="p-2 border-b border-gray-700 text-black font-bold">
+            <td className="p-2 border-b border-gray-700 text-white font-bold">
               Invite Link:
             </td>
             <td className="p-2 border-b border-gray-700 font-bold">
